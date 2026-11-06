@@ -1,0 +1,19 @@
+# Dependencies and builds
+/node_modules/
+/.next/
+/.vinext/
+/dist/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Local configuration and Cloudflare state
+.env*
+!.env.example
+.dev.vars*
+/.wrangler/
+
+# Logs and OS files
+*.log
+.DS_Store
+
