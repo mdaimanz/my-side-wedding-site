@@ -1,0 +1,2 @@
+ALTER TABLE guests_aiman
+  ADD COLUMN display_wish BOOLEAN NOT NULL DEFAULT FALSE AFTER message;
