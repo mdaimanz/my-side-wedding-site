@@ -6,6 +6,7 @@ import "./globals.css";
 const display = Cormorant_Garamond({ subsets: ["latin"], variable: "--font-display", weight: ["400", "500", "600"] });
 const body = Inter({ subsets: ["latin"], variable: "--font-body" });
 const couple = localFont({ src: "../fonts/adelia.ttf", variable: "--font-couple", display: "swap" });
+const header = localFont({ src: "../fonts/Cinzel-Regular.otf", variable: "--font-header", display: "swap" });
 
 export const metadata: Metadata = {
   title: "Aiman & Atiqah | Walimatul Urus",
@@ -13,6 +14,6 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="ms"><body className={`${display.variable} ${body.variable} ${couple.variable}`}>{children}</body></html>;
+  return <html lang="ms"><body className={`${display.variable} ${body.variable} ${couple.variable} ${header.variable}`}>{children}</body></html>;
 }
 

@@ -28,10 +28,10 @@ body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(
 a { color: inherit; text-decoration: none; }
 button, input, textarea, select { font: inherit; }
 
-.site-header { position: fixed; inset: 0 0 auto; z-index: 20; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem clamp(1.25rem, 4vw, 4.5rem); color: var(--forest); background: linear-gradient(to bottom, rgba(255,255,255,.96), rgba(255,255,255,.72) 58%, transparent); }
+.site-header { position: fixed; inset: 0 0 auto; z-index: 20; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem clamp(1.25rem, 4vw, 4.5rem); color: var(--forest); font-family: var(--font-header), serif; background: linear-gradient(to bottom, rgba(255,255,255,.96), rgba(255,255,255,.72) 58%, transparent); }
 .monogram { font-family: var(--font-display); font-size: 1.3rem; letter-spacing: .08em; }
 .monogram span { color: #dec393; padding: 0 .15rem; font-style: italic; }
-.site-header nav { display: flex; gap: clamp(1rem, 3vw, 2.5rem); font-size: .73rem; letter-spacing: .14em; text-transform: uppercase; }
+.site-header nav { display: flex; gap: clamp(1rem, 3vw, 2.5rem); font-size: 1rem; letter-spacing: .14em; text-transform: uppercase; }
 .site-header nav a { opacity: .82; }
 .site-header nav a:hover { opacity: 1; }
 
@@ -62,7 +62,7 @@ button, input, textarea, select { font: inherit; }
 @keyframes hero-wave-left { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
 @keyframes hero-wave-right { from { transform: translate3d(-50%, 0, 0); } to { transform: translate3d(0, 0, 0); } }
 .hero-content { position: relative; z-index: 2; max-width: 52rem; }
-.eyebrow { margin: 0 0 1.2rem; color: var(--gold); font-size: 1.3rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+.eyebrow { margin: 0 0 1.2rem; color: var(--gold); font-family: var(--font-header), serif; font-size: 1.3rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
 .hero .eyebrow { color: #dec393; }
 .hero h1 { margin: 0; font-family: var(--font-couple), var(--font-display); font-size: clamp(2rem, 10vw, 6rem); font-weight: 400; letter-spacing: 0; line-height: 2; }
 .hero h1 span { display: block; } .hero h1 em { display: block; padding: .3em 0; color: #dec393; font-size: .34em; font-weight: 400; }
