@@ -12,6 +12,12 @@ const header = localFont({ src: "../fonts/Cinzel-Regular.otf", variable: "--font
 export const metadata: Metadata = {
   title: "Aiman & Atiqah | Walimatul Urus",
   description: "Jemputan ke majlis perkahwinan Aiman dan Atiqah.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "16x16 32x32 48x48", type: "image/x-icon" },
+      { url: "/favicon.svg", sizes: "any", type: "image/svg+xml" },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
