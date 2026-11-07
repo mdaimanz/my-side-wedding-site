@@ -134,6 +134,7 @@ fieldset { display: grid; gap: .8rem; margin: 0; padding: 1.2rem; border: 1px so
 .radio-label input { width: auto; accent-color: var(--forest); }
 .rsvp-form .button { width: 100%; padding: 1.1rem; }
 .form-message { margin: 0; padding: .8rem 1rem; border-radius: .6rem; font-size: .85rem; }
+.rsvp-form .form-message { font-weight: 400; letter-spacing: normal; }
 .form-message.success { background: #e7f1e9; color: #245634; }
 .form-message.error { background: #f7e8e4; color: #8b392d; }
 
