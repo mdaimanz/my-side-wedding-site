@@ -5,7 +5,7 @@ export const wedding: WeddingDetails = {
   couple: { partnerOne: "Aiman", partnerTwo: "Atiqah" },
   invitationFrom: ["Haji Masod bin Hj. Ahmad", "&", "Hajjah Norashafiza binti Hj. Md Said"],
   date: {
-    iso: "2027-01-01T11:00:00+08:00",
+    iso: "2027-01-01T18:30:00+08:00",
     display: "1 Januari 2027",
     day: "Jumaat",
     time: "6.30 petang — 10.30 malam",

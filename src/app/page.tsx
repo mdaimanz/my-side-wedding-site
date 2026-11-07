@@ -15,7 +15,6 @@ export default function Home() {
       <SingleWaveDivider reverseColors />
       <EventDetails />
       <SingleWaveDivider />
-      {/* <CountdownSection /> */}
       <Rsvp />
       <WeddingWishes />
       <footer>

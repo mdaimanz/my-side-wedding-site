@@ -1,4 +1,5 @@
 import { wedding } from "@/data/wedding";
+import { EventCountdown } from "@/components/ui/event-countdown";
 
 export function EventDetails() {
   return (
@@ -12,6 +13,7 @@ export function EventDetails() {
           <strong>01</strong>
           <span>Januari</span>
           <small>2027</small>
+          <EventCountdown targetDate={wedding.date.iso} />
         </div>
         <div className="event-information">
           <p className="event-day">{wedding.date.day}</p>

@@ -138,18 +138,21 @@ blockquote { margin: 3.2rem auto 0; max-width: 42rem; padding-top: 2rem; border-
 @keyframes single-wave-swell { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.18); } }
 .section-heading { max-width: 70rem; margin: 0 auto 3rem; }
 .section-heading h2, .rsvp-intro h2 { margin: 0; font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 500; line-height: .95; }
-.event-card { max-width: 70rem; margin: auto; display: grid; grid-template-columns: .8fr 1.2fr; min-height: 25rem; background: var(--forest); color: white; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 1.5rem 4rem rgba(37,54,46,.14); }
-.event-date-mark { display: flex; flex-direction: column; justify-content: center; align-items: center; background: radial-gradient(circle, rgba(255,255,255,.08), transparent 55%), #254538; border-right: 1px solid rgba(255,255,255,.12); }
-.event-date-mark strong { font-family: var(--font-display); font-size: clamp(6rem, 13vw, 11rem); font-weight: 400; line-height: .8; color: #e0c79a; }
-.event-date-mark span { margin-top: 1.2rem; font-family: var(--font-display); font-size: 2rem; }
-.event-date-mark small { margin-top: .5rem; letter-spacing: .25em; opacity: .55; }
-.countdown-section { display: flex; justify-content: center; background: var(--paper); }
-.event-information { display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem, 6vw, 5rem); background: linear-gradient(rgba(25, 49, 38, .55), rgba(25, 49, 38, .55)), url("/images/grandeur-beling.jpg") center / cover no-repeat; text-shadow: 0 1px 3px rgba(0, 0, 0, .85), 0 0 12px rgba(0, 0, 0, .65); }
+.event-card { max-width: 70rem; margin: auto; display: grid; grid-template-columns: minmax(0, 1fr); min-height: 25rem; background: var(--forest); color: white; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 1.5rem 4rem rgba(37,54,46,.14); }
+.event-date-mark { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 20rem; padding: 2.5rem 1.25rem; background: radial-gradient(circle, rgba(255,255,255,.08), transparent 55%), #254538; border-bottom: 1px solid rgba(255,255,255,.12); }
+.event-date-mark > strong { font-family: var(--font-display); font-size: clamp(6rem, 13vw, 11rem); font-weight: 400; line-height: .8; color: #e0c79a; }
+.event-date-mark > span { margin-top: 1.2rem; font-family: var(--font-display); font-size: 2rem; }
+.event-date-mark > small { margin-top: .5rem; letter-spacing: .25em; opacity: .55; }
+.event-countdown { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .75rem; width: min(100%, 17rem); margin-top: 2rem; text-align: center; }
+.event-countdown-unit { display: flex; flex-direction: column; gap: .45rem; }
+.event-countdown-number { color: #e0c79a; font-family: var(--font-display), serif; font-size: clamp(1.5rem, 3vw, 2rem); font-variant-numeric: lining-nums tabular-nums; line-height: 1; }
+.event-countdown-label { color: var(--paper); font-size: .6rem; letter-spacing: .1em; line-height: 1.4; text-transform: uppercase; }
+.event-information { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 20rem; padding: clamp(2rem, 6vw, 5rem); text-align: center; background: linear-gradient(rgba(25, 49, 38, .55), rgba(25, 49, 38, .55)), url("/images/grandeur-beling.jpg") center / cover no-repeat; text-shadow: 0 1px 3px rgba(0, 0, 0, .85), 0 0 12px rgba(0, 0, 0, .65); }
 .event-day { color: #dec393; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; }
 .event-information h3 { margin: .8rem 0; font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 400; line-height: 1; }
 .event-information > p:not(.event-day) { color: rgba(255,255,255,.9); line-height: 1.7; }
 .event-time { margin-top: 1.5rem; }
-.event-map-link { display: inline-flex; align-items: center; justify-content: center; align-self: flex-start; min-height: 44px; margin-top: 1.5rem; padding: .75rem 1.5rem; border-radius: .75rem; background: #e0c79a; color: #294d3f; font-size: .875rem; font-weight: 600; text-shadow: none; transition: box-shadow .2s ease; }
+.event-map-link { display: inline-flex; align-items: center; justify-content: center; align-self: center; min-height: 44px; margin-top: 1.5rem; padding: .75rem 1.5rem; border-radius: .75rem; background: #e0c79a; color: #294d3f; font-size: .875rem; font-weight: 600; text-shadow: none; transition: box-shadow .2s ease; }
 .event-map-link:hover { box-shadow: 0 4px 12px rgba(0, 0, 0, .2); }
 .event-map-link:focus-visible { outline: 2px solid #dec393; outline-offset: 3px; }
 .schedule { max-width: 70rem; display: grid; grid-template-columns: repeat(3, 1fr); margin: 3rem auto 0; border-top: 1px solid var(--line); }
@@ -246,9 +249,7 @@ th { color: var(--muted); font-size: .68rem; letter-spacing: .08em; text-transfo
   .hero-time { font-size: clamp(.9rem, 4.2vw, 1.1rem); }
   .hero-copy { font-size: clamp(1.15rem, 4.8vw, 1.5rem); }
   .site-header nav { display: none; }
-  .event-card, .rsvp-content { grid-template-columns: 1fr; }
-  .event-date-mark { min-height: 20rem; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.12); }
-  .event-information { min-height: 20rem; }
+  .rsvp-content { grid-template-columns: 1fr; }
   .schedule { grid-template-columns: 1fr; }
   .schedule article { padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
   .rsvp-intro { position: static; }
