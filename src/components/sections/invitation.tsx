@@ -2,10 +2,30 @@ import Image from "next/image";
 import { wedding } from "@/data/wedding";
 import { MovingWaves } from "@/components/ui/moving-waves";
 
+const invitationFlowers = [
+  { src: "/images/invitation-flower-5.png", width: 701, height: 760 },
+  { src: "/images/invitation-flower-6.png", width: 840, height: 928 },
+  { src: "/images/invitation-flower-7.png", width: 1134, height: 1071 },
+];
+
 export function Invitation() {
   return (
     <section className="section invitation" id="jemputan">
       <MovingWaves placement="top" />
+      <div className="invitation-flowers" aria-hidden="true">
+        {[...invitationFlowers, ...invitationFlowers].map((flower, index) => (
+          <Image
+            key={`${flower.src}-${index}`}
+            className="invitation-flower"
+            src={flower.src}
+            alt=""
+            width={flower.width}
+            height={flower.height}
+            sizes="(max-width: 760px) 120px, 240px"
+            draggable={false}
+          />
+        ))}
+      </div>
       <div className="invitation-content">
         <Image
           className="invitation-greeting"
