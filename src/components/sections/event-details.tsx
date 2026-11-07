@@ -1,5 +1,4 @@
 import { wedding } from "@/data/wedding";
-import { AnimatedCountdown } from "@/components/animated-countdown/animated-countdown";
 
 export function EventDetails() {
   return (
@@ -19,7 +18,9 @@ export function EventDetails() {
           <h3>{wedding.venue.name}</h3>
           <p>{wedding.venue.address}</p>
           <p className="event-time">{wedding.date.time}</p>
-          <a className="text-link" href={wedding.venue.mapUrl} target="_blank" rel="noreferrer">Buka lokasi ↗</a>
+          <a className="event-map-link" href={wedding.venue.mapUrl} target="_blank" rel="noreferrer" aria-label="Buka lokasi di Google Maps" title="Buka lokasi di Google Maps">
+            Buka Lokasi
+          </a>
         </div>
       </div>
       <div className="schedule">
@@ -31,13 +32,6 @@ export function EventDetails() {
             <small>{item.description}</small>
           </article>
         ))}
-      </div>
-      <div className="my-10 flex justify-center">
-        <AnimatedCountdown
-          targetDate={wedding.date.iso}
-          variant="modern"
-          completionMessage="Hari bahagia telah tiba!"
-        />
       </div>
     </section>
   );

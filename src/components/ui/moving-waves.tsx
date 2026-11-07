@@ -56,6 +56,26 @@ type MovingWavesProps = {
   placement?: "bottom" | "top";
 };
 
+type SingleWaveDividerProps = {
+  reverseColors?: boolean;
+};
+
+export function SingleWaveDivider({ reverseColors = false }: SingleWaveDividerProps) {
+  const path = "M0 160 C240 40 480 40 720 160 S1200 280 1440 160";
+
+  return (
+    <div
+      className={`single-wave-divider${reverseColors ? " single-wave-divider-reverse" : ""}`}
+      aria-hidden="true"
+    >
+      <div className="hero-wave-track">
+        <WaveSegment path={path} />
+        <WaveSegment path={path} />
+      </div>
+    </div>
+  );
+}
+
 export function MovingWaves({ placement = "bottom" }: MovingWavesProps) {
   return (
     <div className={`hero-waves hero-waves-${placement}`} aria-hidden="true">

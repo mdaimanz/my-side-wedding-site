@@ -3,25 +3,25 @@ import type { WeddingDetails } from "@/types/wedding";
 // Replace these starter values with the confirmed wedding details.
 export const wedding: WeddingDetails = {
   couple: { partnerOne: "Aiman", partnerTwo: "Atiqah" },
-  invitationFrom: ["Masod bin Ahmad", "&", "Norashafiza binti Md Said"],
+  invitationFrom: ["Haji Masod bin Hj. Ahmad", "&", "Hajjah Norashafiza binti Hj. Md Said"],
   date: {
     iso: "2027-01-01T11:00:00+08:00",
     display: "1 Januari 2027",
     day: "Jumaat",
-    time: "11.00 pagi — 4.00 petang",
+    time: "6.30 petang — 10.30 malam",
   },
   venue: {
-    name: "Dewan Pilihan Keluarga",
-    address: "Alamat penuh majlis, Malaysia",
-    mapUrl: "https://maps.google.com",
+    name: "Grandeur Beling Glasshall",
+    address: "Lorong Melati, 47000 Sungai Buloh, Selangor",
+    mapUrl: "https://maps.app.goo.gl/BwUFQgpYpyGwTaYM7",
   },
   schedule: [
-    { time: "11.00 pagi", title: "Ketibaan tetamu", description: "Jamuan makan bermula." },
-    { time: "12.30 tengah hari", title: "Ketibaan pengantin", description: "Majlis bersanding dan doa selamat." },
-    { time: "4.00 petang", title: "Majlis selesai", description: "Terima kasih atas kehadiran dan doa anda." },
+    { time: "6.30 petang", title: "Ketibaan tetamu", description: "Jamuan makan bermula." },
+    { time: "8.00 malam", title: "Ketibaan pengantin", description: "Majlis bersanding dan doa selamat." },
+    { time: "10.30 malam", title: "Majlis selesai", description: "Terima kasih atas kehadiran anda." },
   ],
   contact: [
-    { name: "Wakil keluarga", phone: "+60 12-345 6789", href: "tel:+60123456789" },
+    { name: "Hj. Masod", phone: "+6019-2408681", href: "tel:+60192408681" },
   ],
 };
 

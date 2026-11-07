@@ -35,7 +35,7 @@ export async function upsertRsvp(input: {
   const connection = await getConnection();
   try {
     await connection.query(
-      `INSERT INTO guests (name, phone_number, attendance, guest_count, message)
+      `INSERT INTO guests_aiman (name, phone_number, attendance, guest_count, message)
        VALUES (?, ?, ?, ?, ?)
        ON DUPLICATE KEY UPDATE
          name = VALUES(name),
@@ -54,7 +54,7 @@ export async function listGuests(): Promise<GuestRecord[]> {
   try {
     const [rows] = await connection.query<(GuestRecord & RowDataPacket)[]>(
       `SELECT id, name, phone_number, attendance, guest_count, message, updated_at
-       FROM guests
+       FROM guests_aiman
        ORDER BY updated_at DESC`,
     );
     return rows;
