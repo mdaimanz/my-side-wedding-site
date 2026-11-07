@@ -8,6 +8,17 @@
   --color-muted-foreground: var(--muted);
   --color-border: var(--line);
   --color-card: #fff;
+  --animate-marquee: marquee var(--duration) linear infinite;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - var(--gap))); }
+}
+@keyframes marquee-vertical {
+  from { transform: translateY(0); }
+  to { transform: translateY(calc(-100% - var(--gap))); }
 }
 
 :root {
@@ -167,6 +178,27 @@ fieldset { display: grid; gap: .8rem; margin: 0; padding: 1.2rem; border: 1px so
 .form-message.success { background: #e7f1e9; color: #245634; }
 .form-message.error { background: #f7e8e4; color: #8b392d; }
 
+.wedding-wishes-section { background: var(--cream); min-width: 0; }
+.wishes-heading { text-align: center; margin-bottom: 1.5rem; }
+.wishes-heading > p:not(.eyebrow) { max-width: 30rem; margin: 1.5rem auto 0; color: var(--muted); line-height: 1.8; }
+.wishes-heading .ornament { margin-top: 1.5rem; color: var(--gold); }
+.wishes-content { width: 100%; max-width: 70rem; min-width: 0; margin: auto; }
+.wishes-state { display: grid; align-content: center; justify-items: center; gap: 1.25rem; min-height: 15rem; margin: 0; padding: 2.5rem 1.5rem; border: 1px solid var(--line); border-radius: 1.5rem; background: var(--paper); color: var(--muted); line-height: 1.8; text-align: center; }
+.wishes-state p { margin: 0; }
+.wishes-carousel { min-width: 0; }
+.wishes-marquee { padding: 1rem .5rem 2rem; }
+.wishes-marquee > .marquee-group { align-items: stretch; }
+.wedding-wish-card { flex: 0 0 auto; width: clamp(16rem, 70vw, 20rem); min-width: 0; margin: 0; padding: 2rem 1.5rem; border: 1px solid var(--line); border-radius: 1.5rem; background: var(--paper); box-shadow: 0 .5rem 1.25rem rgba(41,77,63,.07); text-align: center; }
+.wedding-wish-heart { display: block; margin-bottom: 1rem; color: var(--gold); font-family: var(--font-display), serif; font-size: 2rem; line-height: 1; }
+.wedding-wish-name { color: var(--forest); font-family: var(--font-display), serif; font-size: 1.7rem; font-weight: 600; line-height: 1.2; overflow-wrap: anywhere; }
+.wedding-wish-message { max-width: none; margin: 1rem 0 0; padding: 0; border: 0; color: var(--ink); font-family: var(--font-display), serif; font-size: 1.3rem; font-style: italic; line-height: 1.65; white-space: pre-wrap; overflow-wrap: anywhere; }
+.wishes-controls { display: flex; justify-content: center; margin-top: .5rem; }
+.wishes-pause { min-height: 44px; align-items: center; gap: .65rem; background: var(--paper); }
+.wishes-pause:focus-visible { outline: 2px solid var(--forest); outline-offset: 4px; }
+.wishes-carousel[data-paused="true"] .marquee-group { animation-play-state: paused; }
+.wishes-single { display: flex; justify-content: center; padding: 1rem .5rem 2rem; }
+.wishes-single .wedding-wish-card { width: min(100%, 28rem); }
+
 footer { padding: 7rem 1.5rem; text-align: center; background: var(--forest); color: white; }
 footer h2 { margin: 0; font-family: var(--font-display); font-size: clamp(3rem, 8vw, 6rem); font-weight: 400; }
 footer h2 em { color: #dec393; font-weight: 400; }
@@ -191,6 +223,12 @@ th { color: var(--muted); font-size: .68rem; letter-spacing: .08em; text-transfo
 .status.attending { background: #e4f0e7; color: #2f6540; }
 .status.not_attending { background: #f3e9e5; color: #8c4938; }
 .empty-state { padding: 2rem; text-align: center; color: var(--muted); }
+.admin-wishes-note { max-width: 90rem; margin: 0 auto 1.5rem; color: var(--muted); line-height: 1.7; }
+.wish-visibility-form { display: grid; gap: .65rem; min-width: 10rem; }
+.wish-visibility-form > span, .wish-visibility-form > small { color: var(--muted); }
+.wish-visibility-form .button { min-height: 44px; }
+.wish-visibility-form .button:disabled { cursor: default; }
+.wish-visibility-form .button:focus-visible { outline: 2px solid var(--forest); outline-offset: 3px; }
 
 @media (max-width: 760px) {
   .invitation-flower { width: clamp(4.375rem, 20vw, 7.5rem); }
@@ -221,6 +259,11 @@ th { color: var(--muted); font-size: .68rem; letter-spacing: .08em; text-transfo
 
 @media (prefers-reduced-motion: reduce) {
   .hero-name-flower { animation: none; }
+  .wishes-marquee { display: block; overflow: visible; }
+  .wishes-marquee > .marquee-group { animation: none; transform: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
+  .wishes-marquee > .marquee-group[aria-hidden="true"] { display: none; }
+  .wishes-marquee .wedding-wish-card { width: 100%; }
+  .wishes-controls { display: none; }
   .invitation-flower { animation: none; }
   html { scroll-behavior: auto; }
   .scroll-cue { animation: none; }

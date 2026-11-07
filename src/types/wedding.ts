@@ -14,6 +14,12 @@ export type GuestRecord = {
   attendance: "attending" | "not_attending";
   guest_count: number;
   message: string | null;
+  display_wish: boolean | 0 | 1;
   updated_at: Date;
+};
+
+export type WeddingWish = {
+  full_name: string;
+  wish: string;
 };
 

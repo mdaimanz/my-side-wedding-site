@@ -1,11 +1,10 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { EventDetails } from "@/components/sections/event-details";
-import { CountdownSection } from "@/components/sections/countdown";
 import { Hero } from "@/components/sections/hero";
 import { Invitation } from "@/components/sections/invitation";
 import { Rsvp } from "@/components/sections/rsvp";
+import { WeddingWishes } from "@/components/sections/wedding-wishes";
 import { SingleWaveDivider } from "@/components/ui/moving-waves";
-import { wedding } from "@/data/wedding";
 
 export default function Home() {
   return (
@@ -18,6 +17,7 @@ export default function Home() {
       <SingleWaveDivider />
       {/* <CountdownSection /> */}
       <Rsvp />
+      <WeddingWishes />
       <footer>
         <p className="eyebrow">Terima kasih</p>
         <p>Semoga pertemuan ini membawa seribu kenangan indah.</p>
