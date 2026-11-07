@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { wedding } from "@/data/wedding";
 import { MovingWaves } from "@/components/ui/moving-waves";
+import { AddToCalendar } from "@/components/ui/add-to-calendar";
 
 const heroFlowers = [
   { src: "/images/invitation-flower-5.png", width: 701, height: 760 },
@@ -52,6 +53,7 @@ export function Hero() {
           <p className="hero-date-value">{wedding.date.display}</p>
           <p className="hero-time">{wedding.date.time}</p>
         </div>
+        <AddToCalendar />
         <p className="hero-copy"><strong>Dengan penuh kesyukuran, kami menjemput anda untuk bersama meraikan hari bahagia kami.</strong></p>
         <a className="button button-primary" href="#rsvp">Sahkan kehadiran</a>
       </div>

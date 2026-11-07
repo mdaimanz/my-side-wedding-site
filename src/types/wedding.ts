@@ -1,7 +1,7 @@
 export type WeddingDetails = {
   couple: { partnerOne: string; partnerTwo: string };
   invitationFrom: string[];
-  date: { iso: string; display: string; day: string; time: string };
+  date: { iso: string; endIso: string; display: string; day: string; time: string };
   venue: { name: string; address: string; mapUrl: string };
   schedule: Array<{ time: string; title: string; description: string }>;
   contact: Array<{ name: string; phone: string; href: string }>;

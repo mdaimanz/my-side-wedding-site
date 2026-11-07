@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { submitRsvp, type RsvpState } from "@/app/actions/rsvp";
+import { AddToCalendar } from "@/components/ui/add-to-calendar";
 
 const initialState: RsvpState = { status: "idle", message: "", fieldErrors: {} };
 
@@ -34,6 +35,7 @@ export function RsvpForm() {
         <textarea id="message" name="message" rows={4} maxLength={500} aria-invalid={Boolean(state.fieldErrors.message)} aria-describedby={state.fieldErrors.message ? "message-error" : undefined} />
       </label>
       <button className="button button-primary" type="submit" disabled={pending}>{pending ? "Menyimpan…" : "Hantar maklum balas"}</button>
+      <AddToCalendar />
       {state.status === "success" && state.message && <p className="form-message success" role="status">{state.message}</p>}
     </form>
   );
