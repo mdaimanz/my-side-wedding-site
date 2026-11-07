@@ -39,7 +39,7 @@ export function WeddingWishesMarquee({ wishes }: { wishes: WeddingWish[] }) {
           onClick={() => setPaused((previous) => !previous)}
         >
           <span aria-hidden="true">{paused ? "▷" : "Ⅱ"}</span>
-          {paused ? "Sambung animasi" : "Jeda animasi"}
+          {paused ? "Play" : "Pause"}
         </button>
       </div>
     </div>

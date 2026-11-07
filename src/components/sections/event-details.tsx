@@ -1,5 +1,6 @@
 import { wedding } from "@/data/wedding";
 import { EventCountdown } from "@/components/ui/event-countdown";
+import { SilkBackgroundAnimation } from "@/components/ui/silk-background-animation";
 
 export function EventDetails() {
   return (
@@ -10,6 +11,7 @@ export function EventDetails() {
       </div>
       <div className="event-card">
         <div className="event-date-mark">
+          <SilkBackgroundAnimation />
           <strong>01</strong>
           <span>Januari</span>
           <small>2027</small>

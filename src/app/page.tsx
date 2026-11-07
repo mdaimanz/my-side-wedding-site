@@ -16,6 +16,7 @@ export default function Home() {
       <EventDetails />
       <SingleWaveDivider />
       <Rsvp />
+      <SingleWaveDivider reverseColors />
       <WeddingWishes />
       <footer>
         <p className="eyebrow">Terima kasih</p>
