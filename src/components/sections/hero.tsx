@@ -2,6 +2,14 @@ import Image from "next/image";
 import { wedding } from "@/data/wedding";
 import { MovingWaves } from "@/components/ui/moving-waves";
 
+const heroFlowers = [
+  { src: "/images/invitation-flower-5.png", width: 701, height: 760 },
+  { src: "/images/invitation-flower-6.png", width: 840, height: 928 },
+  { src: "/images/invitation-flower-7.png", width: 1134, height: 1071 },
+  { src: "/images/invitation-flower-5.png", width: 701, height: 760 },
+  { src: "/images/invitation-flower-6.png", width: 840, height: 928 },
+];
+
 export function Hero() {
   return (
     <section className="hero" id="utama">
@@ -18,11 +26,27 @@ export function Hero() {
       />
       <div className="hero-content">
         <p className="eyebrow">Walimatul Urus</p>
-        <h1>
-          <span>{wedding.couple.partnerOne}</span>
-          <em>&amp;</em>
-          <span>{wedding.couple.partnerTwo}</span>
-        </h1>
+        <div className="hero-names">
+          <div className="hero-name-flowers" aria-hidden="true">
+            {heroFlowers.map((flower, index) => (
+              <Image
+                key={`${flower.src}-${index}`}
+                className="hero-name-flower"
+                src={flower.src}
+                alt=""
+                width={flower.width}
+                height={flower.height}
+                sizes="(max-width: 760px) 48px, 72px"
+                draggable={false}
+              />
+            ))}
+          </div>
+          <h1>
+            <span>{wedding.couple.partnerOne}</span>
+            <em>&amp;</em>
+            <span>{wedding.couple.partnerTwo}</span>
+          </h1>
+        </div>
         <div className="ornament" aria-hidden="true"><span>✦</span></div>
         <div className="hero-date">
           <p className="hero-date-value">{wedding.date.display}</p>
