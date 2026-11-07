@@ -24,7 +24,10 @@ export function Hero() {
           <span>{wedding.couple.partnerTwo}</span>
         </h1>
         <div className="ornament" aria-hidden="true"><span>✦</span></div>
-        <p className="hero-date">{wedding.date.display}</p>
+        <div className="hero-date">
+          <p className="hero-date-value">{wedding.date.display}</p>
+          <p className="hero-time">{wedding.date.time}</p>
+        </div>
         <p className="hero-copy"><strong>Dengan penuh kesyukuran, kami menjemput anda untuk bersama meraikan hari bahagia kami.</strong></p>
         <a className="button button-primary" href="#rsvp">Sahkan kehadiran</a>
       </div>

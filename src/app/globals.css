@@ -67,7 +67,9 @@ button, input, textarea, select { font: inherit; }
 .hero h1 span { display: block; } .hero h1 em { display: block; padding: .3em 0; color: #dec393; font-size: .34em; font-weight: 400; }
 .ornament { display: flex; align-items: center; gap: .7rem; justify-content: center; margin: 2.2rem auto 1.3rem; color: #dec393; }
 .ornament::before, .ornament::after { content: ""; width: 3rem; height: 1px; background: currentColor; opacity: .55; }
-.hero-date { font-family: var(--font-display); font-size: 2rem; letter-spacing: .08em; }
+.hero-date { margin: 0; }
+.hero-date-value { margin: 0; font-family: var(--font-hero-date), var(--font-display), serif; font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 400; line-height: 1; }
+.hero-time { margin: .65rem 0 0; font-family: var(--font-display), serif; font-size: clamp(1rem, 2.4vw, 1.35rem); letter-spacing: .08em; }
 .hero-copy { max-width: 30rem; margin: 1rem auto 2rem; color: rgba(41,77,63,.72); font-family: var(--font-display); font-size: 1.5rem; line-height: 1.6; }
 .button { display: inline-flex; justify-content: center; border: 0; cursor: pointer; padding: .9rem 1.35rem; border-radius: 999px; font-size: .73rem; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; transition: transform .2s, background .2s; }
 .button:hover { transform: translateY(-2px); }
@@ -183,7 +185,8 @@ th { color: var(--muted); font-size: .68rem; letter-spacing: .08em; text-transfo
   .hero-content { width: 100%; min-width: 0; }
   .hero .eyebrow { font-size: clamp(.95rem, 4vw, 1.3rem); letter-spacing: .14em; }
   .hero h1 { font-size: clamp(2rem, 10vw, 4.5rem); line-height: 1.8; }
-  .hero-date { font-size: clamp(1.4rem, 6vw, 2rem); }
+  .hero-date-value { font-size: clamp(2rem, 10vw, 2.8rem); }
+  .hero-time { font-size: clamp(.9rem, 4.2vw, 1.1rem); }
   .hero-copy { font-size: clamp(1.15rem, 4.8vw, 1.5rem); }
   .site-header nav { display: none; }
   .event-card, .rsvp-content { grid-template-columns: 1fr; }
