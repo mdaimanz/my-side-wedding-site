@@ -245,6 +245,12 @@ th { color: var(--muted); font-size: .68rem; letter-spacing: .08em; text-transfo
 .wish-visibility-form .button:disabled { cursor: default; }
 .wish-visibility-form .button:focus-visible { outline: 2px solid var(--forest); outline-offset: 3px; }
 
+.wedding-music-toggle:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; }
+.wedding-music { position: fixed; z-index: 30; right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); display: grid; justify-items: end; gap: .75rem; max-width: calc(100vw - 2rem); }
+.wedding-music-toggle { display: inline-flex; align-items: center; gap: .6rem; min-height: 48px; padding: .75rem 1rem; border: 1px solid var(--gold); border-radius: 999px; background: var(--forest); color: var(--paper); box-shadow: 0 .25rem 1rem rgba(36,51,45,.18); cursor: pointer; font-size: .8rem; }
+.wedding-music-toggle:disabled { cursor: wait; opacity: .75; }
+.wedding-music-message { max-width: 19rem; margin: 0; padding: 1rem; border: 1px solid var(--line); border-radius: .75rem; background: var(--paper); color: var(--ink); font-size: .8rem; line-height: 1.6; }
+
 @media (max-width: 760px) {
   .invitation-flower { width: clamp(4.375rem, 20vw, 7.5rem); }
   .invitation-flower:nth-child(odd) { left: -.75rem; }
