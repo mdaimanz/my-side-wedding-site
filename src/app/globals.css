@@ -89,7 +89,9 @@ button, input, textarea, select { font: inherit; }
   66% { transform: translate3d(-6px, 8px, 0) rotate(-3deg); }
 }
 .hero h1 { margin: 0; font-family: var(--font-couple), var(--font-display); font-size: clamp(2rem, 10vw, 6rem); font-weight: 400; letter-spacing: 0; line-height: 2; }
-.hero h1 span { display: block; } .hero h1 em { display: block; padding: .3em 0; color: #dec393; font-size: .34em; font-weight: 400; }
+/* Adelia's full flourishes span 2.438em; reserve room above and below each name. */
+.hero h1 span { display: block; line-height: 2.5; }
+.hero h1 em { display: block; padding: .3em 0; color: #dec393; font-size: .34em; font-weight: 400; }
 .ornament { display: flex; align-items: center; gap: .7rem; justify-content: center; margin: 2.2rem auto 1.3rem; color: #dec393; }
 .ornament::before, .ornament::after { content: ""; width: 3rem; height: 1px; background: currentColor; opacity: .55; }
 .hero-date { margin: 0; }
