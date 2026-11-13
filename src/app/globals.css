@@ -216,6 +216,54 @@ fieldset { display: grid; gap: .8rem; margin: 0; padding: 1.2rem; border: 1px so
 .wishes-single { display: flex; justify-content: center; padding: 1rem .5rem 2rem; }
 .wishes-single .wedding-wish-card { width: min(100%, 28rem); }
 
+.gift-page { min-height: 100svh; background: var(--paper); }
+.gift-hero { position: relative; isolation: isolate; display: grid; place-items: center; min-height: 58svh; overflow: hidden; padding: clamp(5rem, 12vw, 9rem) 1.5rem; text-align: center; background: radial-gradient(circle at 50% 35%, rgba(126,155,136,.18), transparent 38%), linear-gradient(180deg, #fff 0%, var(--paper) 100%); }
+.gift-hero-decoration { position: absolute; z-index: -1; inset: -8rem 0 auto 50%; width: min(95vw, 58rem); aspect-ratio: 1.5; transform: translateX(-50%); background: url("/images/hero-flowers-top-center.png") top center / contain no-repeat; opacity: .28; pointer-events: none; }
+.gift-hero-copy { width: min(100%, 45rem); }
+.gift-hero h1 { margin: 0; color: var(--forest); font-family: var(--font-display), serif; font-size: clamp(4rem, 11vw, 7.5rem); font-weight: 400; line-height: .9; }
+.gift-hero-copy > p:last-child { max-width: 35rem; margin: 1.5rem auto 0; color: var(--muted); font-family: var(--font-display), serif; font-size: clamp(1.2rem, 3vw, 1.55rem); line-height: 1.7; }
+.gift-list-section { padding: clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 6vw, 6rem); background: var(--cream); }
+.gift-list-heading { max-width: 42rem; margin: 0 auto 3rem; text-align: center; }
+.gift-list-heading h2 { margin: 0; color: var(--forest); font-family: var(--font-display), serif; font-size: clamp(2.8rem, 7vw, 4.8rem); font-weight: 500; line-height: 1; }
+.gift-list-heading > p:last-child { margin: 1.25rem auto 0; color: var(--muted); line-height: 1.75; }
+.gift-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.25rem; max-width: 72rem; margin: auto; padding: 0; list-style: none; }
+.gift-card { display: flex; flex-direction: column; justify-content: space-between; gap: 2rem; min-height: 17rem; padding: clamp(1.5rem, 4vw, 2rem); border: 1px solid var(--line); border-radius: 1.5rem; background: var(--paper); box-shadow: 0 .75rem 2rem rgba(41,77,63,.07); }
+.gift-card-reserved { background: rgba(255,253,248,.62); box-shadow: none; }
+.gift-card h2 { margin: 1.1rem 0 .75rem; color: var(--forest); font-family: var(--font-display), serif; font-size: 2rem; font-weight: 600; line-height: 1.15; overflow-wrap: anywhere; }
+.gift-status { display: inline-flex; width: fit-content; padding: .4rem .7rem; border-radius: 999px; font-size: .68rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+.gift-status.available { background: #e4f0e7; color: #2f6540; }
+.gift-status.reserved { background: #efe5d7; color: #76552d; }
+.gift-status.archived { background: #e7e8e6; color: #5e625f; }
+.gift-link { display: inline-flex; align-items: center; gap: .35rem; color: var(--forest); font-size: .84rem; font-weight: 650; text-decoration: underline; text-decoration-color: rgba(41,77,63,.3); text-underline-offset: .25rem; }
+.gift-link:hover { text-decoration-color: currentColor; }
+.gift-link:focus-visible, .gift-reserve-button:focus-visible, .gift-dialog button:focus-visible { outline: 2px solid var(--forest); outline-offset: 4px; }
+.gift-reserve-button { width: 100%; min-height: 48px; }
+.gift-reserve-button:disabled { cursor: not-allowed; transform: none; }
+.gift-list-state { display: grid; justify-items: center; gap: .8rem; max-width: 42rem; margin: auto; padding: 3rem 1.5rem; border: 1px solid var(--line); border-radius: 1.5rem; background: var(--paper); color: var(--muted); text-align: center; }
+.gift-list-state > span { display: grid; place-items: center; width: 3.25rem; height: 3.25rem; border-radius: 50%; background: var(--cream); color: var(--gold); font-family: var(--font-display), serif; font-size: 2rem; }
+.gift-list-state h2 { margin: .4rem 0 0; color: var(--forest); font-family: var(--font-display), serif; font-size: 2rem; font-weight: 600; }
+.gift-list-state p { max-width: 31rem; margin: 0; line-height: 1.7; }
+.gift-list-error > span { background: #f7e8e4; color: #8b392d; }
+.gift-loading-hero { min-height: 45svh; }
+.gift-loading-status { margin: 0 auto 2rem; color: var(--muted); text-align: center; }
+.gift-loading-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; max-width: 72rem; margin: auto; }
+.gift-loading-card { min-height: 17rem; border: 1px solid var(--line); border-radius: 1.5rem; background: linear-gradient(100deg, rgba(255,255,255,.7) 20%, #fff 40%, rgba(255,255,255,.7) 60%); background-size: 200% 100%; animation: gift-loading-shimmer 1.6s ease-in-out infinite; }
+@keyframes gift-loading-shimmer { to { background-position-x: -200%; } }
+.gift-dialog { width: min(calc(100% - 2rem), 34rem); max-height: calc(100dvh - 2rem); padding: 0; border: 0; border-radius: 1.5rem; background: transparent; color: var(--ink); box-shadow: 0 2rem 6rem rgba(20,32,27,.3); }
+.gift-dialog::backdrop { background: rgba(22,39,32,.65); backdrop-filter: blur(4px); }
+.gift-dialog-panel { position: relative; overflow-y: auto; max-height: calc(100dvh - 2rem); padding: clamp(1.5rem, 5vw, 2.5rem); border-radius: 1.5rem; background: var(--paper); }
+.gift-dialog-panel > h2 { margin: 0 2.5rem 1.5rem 0; color: var(--forest); font-family: var(--font-display), serif; font-size: clamp(2rem, 6vw, 2.8rem); font-weight: 600; line-height: 1.05; }
+.gift-dialog-close { position: absolute; top: 1.25rem; right: 1.25rem; display: grid; place-items: center; width: 2.5rem; height: 2.5rem; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--cream); color: var(--forest); cursor: pointer; font-size: 1.5rem; line-height: 1; }
+.gift-reservation-form { display: grid; gap: 1.2rem; }
+.gift-reservation-form label { display: grid; gap: .55rem; color: var(--forest); font-size: .78rem; font-weight: 600; letter-spacing: .04em; }
+.gift-reservation-form .form-message { font-weight: 400; letter-spacing: normal; }
+.gift-reservation-form > .button, .gift-reservation-success > .button { width: 100%; min-height: 48px; }
+.gift-privacy-note { margin: 0; color: var(--muted); font-size: .76rem; line-height: 1.65; }
+.gift-reservation-success { display: grid; justify-items: center; gap: 1.25rem; text-align: center; }
+.gift-reservation-success > span { display: grid; place-items: center; width: 4rem; height: 4rem; border-radius: 50%; background: #e7f1e9; color: #245634; font-size: 1.8rem; }
+.gift-footer { padding: 5rem 1.5rem; }
+.gift-footer > p:last-child { color: rgba(255,255,255,.7); }
+
 footer { padding: 7rem 1.5rem; text-align: center; background: var(--forest); color: white; }
 footer h2 { margin: 0; font-family: var(--font-display); font-size: clamp(3rem, 8vw, 6rem); font-weight: 400; }
 footer h2 em { color: #dec393; font-weight: 400; }
@@ -246,6 +294,35 @@ th { color: var(--muted); font-size: .68rem; letter-spacing: .08em; text-transfo
 .wish-visibility-form .button { min-height: 44px; }
 .wish-visibility-form .button:disabled { cursor: default; }
 .wish-visibility-form .button:focus-visible { outline: 2px solid var(--forest); outline-offset: 3px; }
+.admin-header-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem; }
+.gift-admin-dashboard { color: var(--ink); }
+.gift-admin-create-form { display: grid; grid-template-columns: minmax(12rem, 1fr) minmax(16rem, 1.4fr) minmax(7rem, .35fr) auto; align-items: end; gap: 1rem; max-width: 90rem; margin: 0 auto 2.5rem; padding: 1.5rem; border: 1px solid var(--line); border-radius: 1.25rem; background: white; }
+.gift-admin-form-heading { grid-column: 1 / -1; display: flex; align-items: end; justify-content: space-between; gap: 1rem; }
+.gift-admin-form-heading .eyebrow { margin-bottom: .5rem; font-size: .8rem; }
+.gift-admin-form-heading h2, .gift-admin-list-heading h2 { margin: 0; color: var(--forest); font-family: var(--font-display), serif; font-size: 2rem; font-weight: 600; }
+.gift-admin-create-form label, .gift-admin-edit-form label { display: grid; gap: .5rem; color: var(--forest); font-size: .75rem; font-weight: 650; }
+.gift-admin-create-form > .button { min-height: 48px; }
+.gift-admin-list { display: grid; gap: 1rem; max-width: 90rem; margin: auto; }
+.gift-admin-list-heading { display: flex; justify-content: space-between; align-items: end; gap: 1rem; margin: .5rem 0; }
+.gift-admin-list-heading .eyebrow { margin-bottom: .5rem; font-size: .8rem; }
+.gift-admin-list-heading > p { margin: 0; color: var(--muted); font-size: .85rem; }
+.gift-admin-card { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(16rem, .8fr); gap: 1.25rem 2rem; padding: 1.5rem; border: 1px solid var(--line); border-radius: 1.25rem; background: white; }
+.gift-admin-card.archived { background: #f8f8f6; }
+.gift-admin-card > header { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 1rem; align-items: start; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+.gift-admin-card > header h2 { margin: .7rem 0 0; color: var(--forest); font-family: var(--font-display), serif; font-size: 1.8rem; font-weight: 600; }
+.gift-admin-edit-form { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) 7rem; align-items: end; gap: .8rem; }
+.gift-admin-edit-form .button, .gift-admin-edit-form .form-message { grid-column: 1 / -1; }
+.gift-admin-reservation { padding: 1rem; border-radius: 1rem; background: var(--cream); }
+.gift-admin-reservation h3 { margin: 0 0 1rem; color: var(--forest); font-family: var(--font-display), serif; font-size: 1.3rem; }
+.gift-admin-reservation > p { margin: 0; color: var(--muted); font-size: .85rem; }
+.gift-admin-reservation dl { display: grid; gap: .65rem; margin: 0; }
+.gift-admin-reservation dl div { display: grid; grid-template-columns: 5rem 1fr; gap: .5rem; }
+.gift-admin-reservation dt { color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; }
+.gift-admin-reservation dd { margin: 0; font-size: .85rem; overflow-wrap: anywhere; }
+.gift-admin-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: .75rem; padding-top: .25rem; }
+.gift-admin-actions form { display: grid; gap: .5rem; }
+.gift-danger-button { border: 1px solid rgba(139,57,45,.25); background: #f7e8e4; color: #8b392d; }
+.gift-admin-empty { margin: 0; padding: 3rem 1.5rem; border: 1px dashed var(--line); border-radius: 1rem; color: var(--muted); text-align: center; }
 
 .wedding-music-toggle:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; }
 .wedding-music { position: fixed; z-index: 30; right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); display: grid; justify-items: end; gap: .75rem; max-width: calc(100vw - 2rem); }
@@ -276,6 +353,15 @@ th { color: var(--muted); font-size: .68rem; letter-spacing: .08em; text-transfo
   .rsvp-section::before { left: -20%; width: 72%; }
   .summary-grid { grid-template-columns: 1fr; }
   .admin-dashboard > header { align-items: flex-start; flex-direction: column; }
+  .admin-header-actions { width: 100%; }
+  .gift-admin-create-form { grid-template-columns: 1fr; }
+  .gift-admin-form-heading, .gift-admin-list-heading { align-items: flex-start; flex-direction: column; }
+  .gift-admin-card { grid-template-columns: 1fr; }
+  .gift-admin-card > header, .gift-admin-actions { grid-column: 1; }
+  .gift-admin-edit-form { grid-template-columns: 1fr; }
+  .gift-admin-edit-form .button, .gift-admin-edit-form .form-message { grid-column: 1; }
+  .gift-loading-grid { grid-template-columns: 1fr; }
+  .gift-loading-card:nth-child(n+2) { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -291,4 +377,5 @@ th { color: var(--muted); font-size: .68rem; letter-spacing: .08em; text-transfo
   .hero-wave-track { animation: none !important; transform: none !important; will-change: auto; }
   .single-wave-divider svg { animation: none; transform: none; }
   .button { transition: none; }
+  .gift-loading-card { animation: none; }
 }

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { logoutAdmin } from "@/app/actions/admin";
 import { listGuests } from "@/lib/db";
 import { requireAdmin } from "@/lib/admin-auth";
@@ -13,7 +14,13 @@ export default async function AdminPage() {
 
   return (
     <main className="admin-dashboard">
-      <header><div><p className="eyebrow">Pengurusan RSVP</p><h1>Senarai tetamu</h1></div><form action={logoutAdmin}><button className="button button-secondary">Log keluar</button></form></header>
+      <header>
+        <div><p className="eyebrow">Pengurusan RSVP</p><h1>Senarai tetamu</h1></div>
+        <div className="admin-header-actions">
+          <Link className="button button-secondary" href="/admin/gifts">Urus hadiah</Link>
+          <form action={logoutAdmin}><button className="button button-secondary">Log keluar</button></form>
+        </div>
+      </header>
       <div className="summary-grid"><article><span>Maklum balas</span><strong>{guests.length}</strong></article><article><span>Hadir</span><strong>{attending.length}</strong></article><article><span>Jumlah tetamu</span><strong>{totalPax}</strong></article></div>
       <p className="admin-wishes-note">Terbitkan ucapan yang ingin dikongsi. Lima ucapan diterbitkan yang terkini akan dipaparkan di laman jemputan. Perubahan nama atau ucapan memerlukan kelulusan semula.</p>
       <div className="table-wrap">

@@ -13,3 +13,27 @@ CREATE TABLE IF NOT EXISTS guests_aiman (
   CONSTRAINT guests_guest_count_check CHECK (guest_count BETWEEN 0 AND 10)
 );
 
+CREATE TABLE IF NOT EXISTS gifts_aiman (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(160) NOT NULL,
+  purchase_url VARCHAR(2048) NOT NULL,
+  display_order INT UNSIGNED NOT NULL DEFAULT 0,
+  active BOOLEAN NOT NULL DEFAULT TRUE,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  KEY gifts_active_order_index (active, display_order, id)
+);
+
+CREATE TABLE IF NOT EXISTS gift_reservations_aiman (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  gift_id BIGINT UNSIGNED NOT NULL,
+  gifter_name VARCHAR(120) NOT NULL,
+  gifter_phone VARCHAR(32) NOT NULL,
+  reserved_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  UNIQUE KEY gift_reservations_gift_unique (gift_id),
+  CONSTRAINT gift_reservations_gift_fk FOREIGN KEY (gift_id)
+    REFERENCES gifts_aiman (id) ON DELETE RESTRICT
+);
+

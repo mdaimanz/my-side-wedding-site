@@ -23,3 +23,19 @@ export type WeddingWish = {
   wish: string;
 };
 
+export type PublicGift = {
+  id: number;
+  name: string;
+  purchaseUrl: string;
+  reserved: boolean;
+};
+
+export type AdminGift = PublicGift & {
+  displayOrder: number;
+  active: boolean;
+  gifterName: string | null;
+  gifterPhone: string | null;
+  reservedAt: Date | null;
+  updatedAt: Date;
+};
+
