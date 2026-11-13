@@ -28,7 +28,7 @@ export function RsvpForm() {
       </fieldset>
       <label htmlFor="guestCount">Bilangan tetamu
         {state.fieldErrors.guestCount && <p className="form-message error" id="guest-count-error" role="alert">{state.fieldErrors.guestCount}</p>}
-        <select id="guestCount" name="guestCount" defaultValue="1" aria-invalid={Boolean(state.fieldErrors.guestCount)} aria-describedby={state.fieldErrors.guestCount ? "guest-count-error" : undefined}>{Array.from({ length: 3 }, (_, index) => <option key={index + 1}>{index + 1}</option>)}</select>
+        <select id="guestCount" name="guestCount" defaultValue="1" aria-invalid={Boolean(state.fieldErrors.guestCount)} aria-describedby={state.fieldErrors.guestCount ? "guest-count-error" : undefined}>{Array.from({ length: 5 }, (_, index) => <option key={index + 1}>{index + 1}</option>)}</select>
       </label>
       <label htmlFor="message">Ucapan untuk pengantin <span>(pilihan)</span>
         {state.fieldErrors.message && <p className="form-message error" id="message-error" role="alert">{state.fieldErrors.message}</p>}

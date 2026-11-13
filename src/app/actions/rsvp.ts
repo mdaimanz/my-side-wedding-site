@@ -28,8 +28,8 @@ export async function submitRsvp(_previous: RsvpState, formData: FormData): Prom
     return validationError("attendance", "Sila pilih status kehadiran.");
   }
   const guestCount = attendance === "attending" ? rawGuestCount : 0;
-  if (!Number.isInteger(guestCount) || guestCount < 0 || guestCount > 3) {
-    return validationError("guestCount", "Bilangan tetamu mestilah antara 1 hingga 3.");
+  if (!Number.isInteger(guestCount) || guestCount < 0 || guestCount > 5) {
+    return validationError("guestCount", "Bilangan tetamu mestilah antara 1 hingga 5.");
   }
   if (message.length > 500) return validationError("message", "Ucapan mestilah 500 aksara atau kurang.");
 
